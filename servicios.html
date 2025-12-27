@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Servicios | dnis.tattoo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <strong>dnis.tattoo</strong>
+  <ul>
+    <li><a href="index.html">Estudio</a></li>
+    <li><a href="servicios.html">Servicios</a></li>
+    <li><a href="galeria.html">Galería</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- SERVICIOS -->
+<section>
+  <h2>Servicios</h2>
+
+  <div class="grid">
+
+    <div class="card service-bg old" onclick="openModal('old')">
+      <h3>Old School</h3>
+    </div>
+
+    <div class="card service-bg fine" onclick="openModal('fine')">
+      <h3>Línea fina</h3>
+    </div>
+
+    <div class="card service-bg realism" onclick="openModal('realism')">
+      <h3>Realismo</h3>
+    </div>
+
+    <div class="card service-bg watercolor" onclick="openModal('watercolor')">
+      <h3>Acuarelas</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content modal-bg">
+    <span class="close" onclick="closeModal()">×</span>
+    <h3 id="modal-title"></h3>
+    <p id="modal-text"></p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-content">
+    <span>© 2025 dnis.tattoo</span>
+    <a href="https://instagram.com/dnis.tattoo" target="_blank">Instagram</a>
+  </div>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+  const data = {
+    old: {
+      title: "Old School",
+      text: "Estilo clásico con líneas gruesas, colores sólidos y diseños atemporales inspirados en el tattoo tradicional.",
+      image: "img/oldschool.jpeg"
+    },
+    fine: {
+      title: "Línea fina",
+      text: "Tatuajes delicados, precisos y elegantes, con especial cuidado en el detalle y la limpieza del trazo.",
+      image: "img/lineafina.jpeg"
+    },
+    realism: {
+      title: "Realismo",
+      text: "Retratos y composiciones realistas con alto nivel de detalle, profundidad y fidelidad visual.",
+      image: "img/realismo.jpeg"
+    },
+    watercolor: {
+      title: "Acuarelas",
+      text: "Estilo artístico que simula pinceladas y manchas de acuarela, aportando fluidez y color al diseño.",
+      image: "img/acuarela.jpeg"
+    }
+  };
+
+  function openModal(type) {
+    const modal = document.getElementById("modal");
+    const content = document.querySelector(".modal-bg");
+
+    document.getElementById("modal-title").innerText = data[type].title;
+    document.getElementById("modal-text").innerText = data[type].text;
+
+    content.style.backgroundImage = `url('${data[type].image}')`;
+    modal.style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("modal").style.display = "none";
+  }
+</script>
+
+</body>
+</html>

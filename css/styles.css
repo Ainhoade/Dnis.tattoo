@@ -1,0 +1,269 @@
+:root {
+  --black: #0b0b0b;
+  --white: #ffffff;
+  --gray: #9a9a9a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(0,0,0,.7);
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background:
+  linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+    url('../img/portada.png') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 6rem 2rem;
+}
+
+
+.hero h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.hero span {
+  color: var(--white);
+}
+
+.hero p {
+  max-width: 600px;
+  margin: 1.5rem 0;
+  color: var(--white);
+}
+
+.cta {
+  display: inline-block;
+  padding: .8rem 1.6rem;
+  border: 1px solid var(--white);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* SECTIONS */
+section {
+  padding: 6rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h2 {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+
+
+.card {
+  border: 1px solid #222;
+  padding: 2rem;
+  text-align: center;
+  justify-content: center;
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid #222;
+  color: var(--gray);
+}
+
+
+/* MODAL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal-content {
+  background: #111;
+  padding: 2.5rem;
+  max-width: 500px;
+  border: 1px solid #222;
+}
+
+.modal-content h3 {
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  color: var(--gray);
+}
+
+.close {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* FOOTER */
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: .9rem;
+}
+
+
+
+.service-bg {
+  position: relative;
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.service-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,.25),
+    rgba(0,0,0,.85)
+  );
+  z-index: 0;
+}
+
+.service-bg h3 {
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* OLD SCHOOL */
+.old {
+  background-image: url('../img/oldschool.jpeg');
+}
+
+/* LÍNEA FINA */
+.fine {
+  background-image: url('../img/lineafina.jpeg');
+}
+
+/* REALISMO */
+.realism {
+  background-image: url('../img/realismo.jpeg');
+}
+
+/* ACUARELAS */
+.watercolor {
+  background-image: url('../img/acuarela.jpg');
+}
+
+.service-bg {
+  transition: transform .4s ease;
+}
+
+.service-bg:hover {
+  transform: scale(1.03);
+}
+
+
+.modal-bg {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+}
+
+.modal-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,.6),
+    rgba(0,0,0,.9)
+  );
+  z-index: 0;
+}
+
+.modal-bg h3,
+.modal-bg p,
+.modal-bg .close {
+  position: relative;
+  z-index: 1;
+}
+
+.modal-bg p {
+  color: var(--gray);
+  margin-top: 1rem;
+}
