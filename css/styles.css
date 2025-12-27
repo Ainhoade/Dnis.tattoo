@@ -45,13 +45,12 @@ nav a {
 .hero {
   min-height: 100vh;
   background:
-  linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
+    linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)),
     url('../img/portada.png') center center / cover no-repeat;
   display: flex;
   align-items: center;
   padding: 6rem 2rem;
 }
-
 
 .hero h1 {
   font-size: 3rem;
@@ -95,7 +94,6 @@ h2 {
   gap: 2rem;
 }
 
-
 .card {
   border: 1px solid #222;
   padding: 2rem;
@@ -124,6 +122,19 @@ footer {
   color: var(--gray);
 }
 
+.footer-content {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-content a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: .9rem;
+}
 
 /* MODAL */
 .modal {
@@ -162,23 +173,6 @@ footer {
   cursor: pointer;
 }
 
-/* FOOTER */
-.footer-content {
-  max-width: 1100px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer-content a {
-  color: var(--white);
-  text-decoration: none;
-  font-size: .9rem;
-}
-
-
-
 .service-bg {
   position: relative;
   height: 280px;
@@ -189,16 +183,18 @@ footer {
   background-size: cover;
   background-position: center;
   overflow: hidden;
+  transition: transform .4s ease;
+}
+
+.service-bg:hover {
+  transform: scale(1.03);
 }
 
 .service-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(0,0,0,.25),
-    rgba(0,0,0,.85)
-  );
+  background: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.85));
   z-index: 0;
 }
 
@@ -209,34 +205,10 @@ footer {
   letter-spacing: 1px;
 }
 
-/* OLD SCHOOL */
-.old {
-  background-image: url('../img/oldschool.jpeg');
-}
-
-/* LÍNEA FINA */
-.fine {
-  background-image: url('../img/lineafina.jpeg');
-}
-
-/* REALISMO */
-.realism {
-  background-image: url('../img/realismo.jpeg');
-}
-
-/* ACUARELAS */
-.watercolor {
-  background-image: url('../img/acuarela.jpg');
-}
-
-.service-bg {
-  transition: transform .4s ease;
-}
-
-.service-bg:hover {
-  transform: scale(1.03);
-}
-
+.old { background-image: url('../img/oldschool.jpeg'); }
+.fine { background-image: url('../img/lineafina.jpeg'); }
+.realism { background-image: url('../img/realismo.jpeg'); }
+.watercolor { background-image: url('../img/acuarela.jpg'); }
 
 .modal-bg {
   position: relative;
@@ -249,10 +221,7 @@ footer {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    rgba(0,0,0,.6),
-    rgba(0,0,0,.9)
-  );
+  background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.9));
   z-index: 0;
 }
 
@@ -266,4 +235,53 @@ footer {
 .modal-bg p {
   color: var(--gray);
   margin-top: 1rem;
+}
+
+/* RESPONSIVE PARA MÓVIL */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+
+  section {
+    padding: 4rem 1rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .grid, .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .service-bg {
+    height: 200px;
+    padding: 1rem;
+  }
+
+  .cta {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
 }
